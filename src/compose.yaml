@@ -10,4 +10,26 @@ services:
       watch:
         - action: rebuild
           path: ./Orders.Services/
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - order-api
+  db:
+    image: mysql:8.0.41-debian
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=keycloak
+    volumes:
+      - ./services/.docker/keycloakdata:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 10s
+      retries: 3
+    networks:
+      - order-api 
+networks:
+  order-api:
+    driver: bridge
 
