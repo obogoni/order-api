@@ -33,7 +33,6 @@ public class Order : Entity<Guid>
 
     public DateTime? CanceledAt { get; private set; }
 
-
     public class Errors
     {
         public static string CancelDateBeforeCreationDate = "Cancel date can't be before creation date.";

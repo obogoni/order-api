@@ -13,7 +13,15 @@
 
   <ItemGroup>
     <PackageReference Include="CSharpFunctionalExtensions" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
+    <PackageReference Include="MySql.Data" />
+    <PackageReference Include="MySql.EntityFrameworkCore" />
     <PackageReference Include="Refit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Orders.Contracts\Orders.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

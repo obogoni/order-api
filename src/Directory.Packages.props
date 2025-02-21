@@ -4,6 +4,10 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="CSharpFunctionalExtensions" Version="3.4.3" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="9.0.2" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.2" />
+    <PackageVersion Include="MySql.Data" Version="9.2.0" />
+    <PackageVersion Include="MySql.EntityFrameworkCore" Version="9.0.0" />
     <PackageVersion Include="Refit" Version="8.0.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
     <PackageVersion Include="MSTest" Version="3.6.1" />
