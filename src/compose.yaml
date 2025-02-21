@@ -1,0 +1,13 @@
+name: orders
+
+services:
+  api:
+    build: ./Orders.Services/ 
+    ports: 
+        - 5000:5074
+    restart: always
+    develop:
+      watch:
+        - action: rebuild
+          path: ./Orders.Services/
+
