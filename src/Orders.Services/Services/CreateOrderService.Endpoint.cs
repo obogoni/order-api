@@ -1,3 +1,4 @@
+using CSharpFunctionalExtensions;
 using Microsoft.AspNetCore.Mvc;
 using Orders.Contracts;
 using Orders.Contracts.CreateOrder;
@@ -11,8 +12,12 @@ public static class CreateOrderEndpoint
         app.MapPost(Constants.OrdersRoute, CreateOrder);
     }
 
-    public static Task<CreateOrderResponse> CreateOrder(ICreateOrderService createOrderService, [FromBody] CreateOrderRequest request)
+    public static async Task<CreateOrderResponse> CreateOrder([FromBody] CreateOrderRequest request, ICreateOrderService createOrderService, CancellationToken cancellationToken)
     {
-        return null;
+        var result = await createOrderService.CreateOrder(request, cancellationToken);
+       
+        
+
+        .Bind(() => { return Result.Success(); });
     }
 }

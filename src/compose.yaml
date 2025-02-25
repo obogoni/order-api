@@ -21,7 +21,7 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=keycloak
     volumes:
-      - ./services/.docker/keycloakdata:/var/lib/mysql
+      - ./.docker/db:/var/lib/mysql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 5s

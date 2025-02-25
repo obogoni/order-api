@@ -2,13 +2,12 @@ using CSharpFunctionalExtensions;
 
 namespace Orders.Domain;
 
-public class Order : Entity<Guid>
+public class Order : Entity<int>, IAggregateRoot
 {
     public static Order Create(DateTime createdAt)
     {
         return new Order()
         {
-            Id = Guid.NewGuid(),
             Status = OrderStatus.Open,
             CreatedAt = createdAt
         };

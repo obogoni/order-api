@@ -1,6 +1,11 @@
+using Orders.Services;
+using Orders.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.AddInfrastructureServices();
+
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
-
+app.UseCreateOrder();
 app.Run();
