@@ -19,7 +19,7 @@ services:
     image: mysql:8.0.41-debian
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=keycloak
+      - MYSQL_DATABASE=Orders
     volumes:
       - ./.docker/db:/var/lib/mysql
     healthcheck:

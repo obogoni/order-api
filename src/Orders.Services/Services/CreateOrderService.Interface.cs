@@ -6,5 +6,5 @@ namespace Orders.Services;
 
 public interface ICreateOrderService
 {
-    Task<Result<Order>> CreateOrder(CreateOrderRequest request, CancellationToken cancellationToken);
+    Task<Order> CreateOrder(CreateOrderRequest request, CancellationToken cancellationToken);
 }
