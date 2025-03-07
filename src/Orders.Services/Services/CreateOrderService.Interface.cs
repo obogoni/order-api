@@ -1,4 +1,3 @@
-using CSharpFunctionalExtensions;
 using Orders.Domain;
 using Orders.Contracts.CreateOrder;
 

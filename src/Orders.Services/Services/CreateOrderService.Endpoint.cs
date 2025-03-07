@@ -9,7 +9,10 @@ public static class CreateOrderEndpoint
 {
     public static void UseCreateOrder(this WebApplication app)
     {
-        app.MapPost(Constants.OrdersRoute, CreateOrder);
+        app
+          .MapPost(Constants.OrdersRoute, CreateOrder)
+          .WithName("Post Order")
+          .WithDescription("Creates a new order");
     }
 
     public static async Task<IResult> CreateOrder([FromBody] CreateOrderRequest request, ICreateOrderService createOrderService, CancellationToken cancellationToken)
